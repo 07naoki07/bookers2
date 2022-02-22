@@ -1,0 +1,42 @@
+<%= render 'list', book: @book, user: current_user %>
+
+<div class="col-md-3">
+   <h2>User info</h2>
+   <%= image_tag user.get_profile_image(100,100) %>
+  <table class="table">
+  <tbody>
+    <tr></tr>
+  <tr>
+	  <th>name</th>
+	  <th><%= user.name %></th>
+  </tr>
+  <tr>
+	  <th>introduction</th>
+	  <th></th>
+  </tr>
+ </tbody>
+ </table>
+ 
+<div class="row">
+  <% if user == current_user %>
+  <a class="btn btn-outline-secondary btn-block fas fa-user-cog edit_user_59574" >
+  <%= link_to , edit_user_path(user)do %>
+  <% end %>
+  </a>
+</div>
+
+
+<label for="inputName">Name</label><br>
+     <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%><br>
+     <label for="inputImage">Image</label><br>
+     
+     <label for="inputIntroduction">Introduction</label><br>
+     <%= f.text_field :Introduction, autofocus: true, id:"inputIntroduction", placeholder:"自己紹介"%><br>
+     
+     <%= f.submit "Update User" %>
+     <% end %>
+     
+     <p>
+        <% if @book.user == current_user %>
+        <%= link_to "削除", book_path(@book), method: :delete %>
+        </p>
