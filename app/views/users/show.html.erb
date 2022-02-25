@@ -1,7 +1,7 @@
 <p id="notice"></p>
 <div class = "container px-5 px-sm-0">
  <div class ="row">
-<%= render 'books/list', book: @book, user: current_user %>
+<%= render 'books/list', book: @book, user: @user %>
 
 <div class="col-md-8 offset-md-1">
   <h2>Books</h2>
@@ -18,13 +18,13 @@
    <tbody>
      <tr>
        <td>
-        <p><%= image_tag book .user.get_profile_image(100,100) %></p> 
+        <p><%= image_tag book .user.get_profile_image(40,40) %></p> 
        </td>
        <td>
-        <p><%= book.shop_name %></p>
+        <p><%= link_to book.title, book_path(book.id) %></p>
        </td>
        <td>
-        <p><%= book.caption %></p>
+        <p><%= book.body %></p>
        </td>
        <td>
          
