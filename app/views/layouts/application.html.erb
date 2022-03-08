@@ -71,17 +71,18 @@
               <% end %>
              </li>
             <% end %>
-          
         </ul>
       </div>
     </div>
   </nav>
-  <div class="d-flex align-items-center justify-content-center">
-  　<%= render 'searches/search', range: @range %>
-  </div>
+    <div class="d-flex align-items-center justify-content-center">
+  　 <%= render 'searches/search', range: @range %>
+    </div>   
 </header>
+ <main>
     <%= flash[:notice] %>
     <%= yield %>
+ </main>
 
   
 <footer>
